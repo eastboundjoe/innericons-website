@@ -9,31 +9,28 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --color-bg: #FFFEF8;
+            --color-bg: #FAFAFA;
             --color-surface: #FFFFFF;
-            --color-text: #121212;
-            --color-text-light: #555555;
-            --color-yellow: #fcdc3e;
-            --color-green: #2a6251;
-            --color-pink: #ff6b9d;
-            --color-light-green: #7fb685;
-            --color-accent: #fcdc3e;
-            --color-accent-secondary: #2a6251;
-            --color-border: #e8e8e8;
+            --color-text: #222222;
+            --color-text-light: #666666;
+            --color-accent: #C46492;
+            --color-accent-secondary: #7764C4;
+            --color-accent-tertiary: #64C4BE;
+            --color-border: #E5E5E5;
 
-            --font-display: 'Quicksand', sans-serif;
-            --font-body: 'Assistant', sans-serif;
+            --font-display: 'Sora', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
 
-            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
 
-            --border-radius: 20px;
-            --transition: all 0.3s ease;
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -88,17 +85,16 @@
         }
 
         .logo-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--color-yellow);
-            border-radius: 12px;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-secondary));
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--color-green);
+            color: white;
             font-weight: 800;
-            font-size: 20px;
-            box-shadow: 0 3px 8px rgba(252, 220, 62, 0.3);
+            font-size: 18px;
         }
 
         nav ul {
@@ -116,7 +112,7 @@
         }
 
         nav a:hover {
-            color: var(--color-green);
+            color: var(--color-accent);
         }
 
         nav a::after {
@@ -125,8 +121,8 @@
             bottom: -4px;
             left: 0;
             width: 0;
-            height: 3px;
-            background: var(--color-yellow);
+            height: 2px;
+            background: var(--color-accent);
             transition: var(--transition);
         }
 
@@ -138,27 +134,6 @@
         .hero {
             padding: 120px 0 100px;
             text-align: center;
-            background: linear-gradient(180deg, var(--color-yellow) 0%, #fff9d0 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '⭐';
-            position: absolute;
-            font-size: 60px;
-            opacity: 0.15;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .hero::before {
-            top: 10%;
-            left: 10%;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
         }
 
         .hero h1 {
@@ -172,11 +147,10 @@
         }
 
         .hero .gradient-text {
-            background: linear-gradient(135deg, var(--color-green), var(--color-light-green));
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            position: relative;
         }
 
         .hero p {
@@ -211,28 +185,27 @@
         }
 
         .btn-primary {
-            background: var(--color-green);
+            background: var(--color-text);
             color: white;
-            box-shadow: 0 4px 12px rgba(42, 98, 81, 0.3);
+            box-shadow: var(--shadow-md);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(42, 98, 81, 0.4);
-            background: #1f4d3d;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: var(--color-accent);
         }
 
         .btn-secondary {
-            background: white;
-            color: var(--color-green);
-            border: 3px solid var(--color-yellow);
+            background: var(--color-surface);
+            color: var(--color-text);
+            border: 2px solid var(--color-border);
         }
 
         .btn-secondary:hover {
-            background: var(--color-yellow);
-            border-color: var(--color-yellow);
-            color: var(--color-green);
-            transform: translateY(-3px);
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            transform: translateY(-2px);
         }
 
         /* About Section */
@@ -251,13 +224,9 @@
             font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--color-green);
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
             margin-bottom: 16px;
-            background: var(--color-yellow);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 30px;
         }
 
         .section-title {
@@ -301,18 +270,15 @@
         }
 
         .feature:nth-child(1) .feature-icon {
-            background: var(--color-yellow);
-            color: var(--color-green);
+            background: linear-gradient(135deg, rgba(196, 100, 146, 0.1), rgba(196, 100, 146, 0.2));
         }
 
         .feature:nth-child(2) .feature-icon {
-            background: var(--color-green);
-            color: var(--color-yellow);
+            background: linear-gradient(135deg, rgba(119, 100, 196, 0.1), rgba(119, 100, 196, 0.2));
         }
 
         .feature:nth-child(3) .feature-icon {
-            background: var(--color-pink);
-            color: white;
+            background: linear-gradient(135deg, rgba(100, 196, 190, 0.1), rgba(100, 196, 190, 0.2));
         }
 
         .feature:hover .feature-icon {
@@ -371,27 +337,27 @@
         }
 
         .card:nth-child(1) .card-image {
-            background: linear-gradient(135deg, #fff9d0, #fcdc3e);
+            background: linear-gradient(135deg, rgba(196, 100, 146, 0.15), rgba(196, 100, 146, 0.05));
         }
 
         .card:nth-child(2) .card-image {
-            background: linear-gradient(135deg, #d0f4e6, #7fb685);
+            background: linear-gradient(135deg, rgba(119, 100, 196, 0.15), rgba(119, 100, 196, 0.05));
         }
 
         .card:nth-child(3) .card-image {
-            background: linear-gradient(135deg, #ffd6e7, #ff6b9d);
+            background: linear-gradient(135deg, rgba(100, 196, 190, 0.15), rgba(100, 196, 190, 0.05));
         }
 
         .card:nth-child(4) .card-image {
-            background: linear-gradient(135deg, #d4ebe0, var(--color-green));
+            background: linear-gradient(135deg, rgba(196, 164, 100, 0.15), rgba(196, 164, 100, 0.05));
         }
 
         .card:nth-child(5) .card-image {
-            background: linear-gradient(135deg, #fff5c2, #ffd93d);
+            background: linear-gradient(135deg, rgba(164, 100, 196, 0.15), rgba(164, 100, 196, 0.05));
         }
 
         .card:nth-child(6) .card-image {
-            background: linear-gradient(135deg, #c8e6d4, #5fa36a);
+            background: linear-gradient(135deg, rgba(100, 164, 196, 0.15), rgba(100, 164, 196, 0.05));
         }
 
         .card-content {
@@ -420,49 +386,20 @@
 
         .tag {
             display: inline-block;
-            padding: 6px 14px;
-            background: var(--color-yellow);
+            padding: 4px 12px;
+            background: var(--color-bg);
             border-radius: 100px;
             font-size: 13px;
-            font-weight: 600;
-            color: var(--color-green);
-            border: 2px solid var(--color-yellow);
-        }
-
-        .tag:hover {
-            background: var(--color-green);
-            color: var(--color-yellow);
-            border-color: var(--color-green);
+            font-weight: 500;
+            color: var(--color-text-light);
         }
 
         /* CTA Section */
         .cta-section {
             padding: 100px 0;
-            background: linear-gradient(135deg, var(--color-green), #1f4d3d);
+            background: var(--color-text);
             color: white;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '✨';
-            position: absolute;
-            font-size: 80px;
-            opacity: 0.1;
-            top: 20%;
-            right: 10%;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .cta-section::after {
-            content: '💝';
-            position: absolute;
-            font-size: 70px;
-            opacity: 0.1;
-            bottom: 20%;
-            left: 10%;
-            animation: float 7s ease-in-out infinite reverse;
         }
 
         .cta-section h2 {
@@ -515,23 +452,23 @@
         }
 
         .btn-cta {
-            background: var(--color-yellow);
-            color: var(--color-green);
+            background: white;
+            color: var(--color-text);
             padding: 16px 36px;
             border-radius: 100px;
             border: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 16px;
             cursor: pointer;
             transition: var(--transition);
             font-family: var(--font-body);
-            box-shadow: 0 4px 15px rgba(252, 220, 62, 0.4);
         }
 
         .btn-cta:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 24px rgba(252, 220, 62, 0.6);
-            background: #ffd93d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            background: var(--color-accent);
+            color: white;
         }
 
         /* Footer */
@@ -570,7 +507,7 @@
         }
 
         .footer-section a:hover {
-            color: var(--color-green);
+            color: var(--color-accent);
         }
 
         .social-links {
@@ -579,25 +516,22 @@
         }
 
         .social-link {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            background: var(--color-yellow);
+            background: var(--color-bg);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: var(--transition);
             text-decoration: none;
             font-size: 20px;
-            color: var(--color-green);
-            font-weight: 700;
         }
 
         .social-link:hover {
-            background: var(--color-green);
-            color: var(--color-yellow);
-            transform: translateY(-4px) scale(1.1);
-            box-shadow: 0 6px 16px rgba(42, 98, 81, 0.3);
+            background: var(--color-accent);
+            color: white;
+            transform: translateY(-4px);
         }
 
         .footer-bottom {
