@@ -690,7 +690,7 @@
                             <span class="tag">Stress Relief</span>
                             <span class="tag">Classroom Ready</span>
                         </div>
-                        <a href="#contact" class="btn btn-primary" style="margin-top: 16px; display: inline-block;">Get Yours</a>
+                        <a href="https://www.amazon.com/dp/B07BYYNKCY" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 16px; display: inline-block;">Get Yours on Amazon</a>
                     </div>
                 </div>
 
@@ -705,7 +705,7 @@
                             <span class="tag">75 Picture Cards</span>
                             <span class="tag">100 Discussion Cards</span>
                         </div>
-                        <a href="#contact" class="btn btn-primary" style="margin-top: 16px; display: inline-block;">Get Yours</a>
+                        <a href="https://www.amazon.com/dp/B085X24KZG" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 16px; display: inline-block;">Get Yours on Amazon</a>
                     </div>
                 </div>
             </div>
@@ -889,9 +889,14 @@
             // Here you would integrate with your email service (Mailchimp, ConvertKit, Flodesk, etc.)
             console.log('Form submitted:', { name, email });
 
+            // Open Google Drive download in new tab
+            window.open('https://drive.google.com/file/d/1292VGI8ap4LhEtGot33TAcPHpzCaGuVG/view', '_blank');
+
             // Show success message
-            alert('Thank you! Check your email for your FREE Mindfulness eBook. We\'ll also send you updates on new resources and activities.');
-            this.reset();
+            alert('Thank you! Your download will start in a new tab. We\'ll also send you updates on new resources and activities.');
+
+            // Redirect to mindfulness download page
+            window.location.href = 'https://innericons.com/#mindfulnessdownload';
         });
 
         // Add parallax effect to hero section
