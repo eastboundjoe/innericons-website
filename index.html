@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerIcons - Beautifully Crafted Icon Sets</title>
+    <meta name="description" content="Discover beautifully crafted icon sets and design resources for creators, designers, and developers.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-bg: #FAFAFA;
+            --color-surface: #FFFFFF;
+            --color-text: #222222;
+            --color-text-light: #666666;
+            --color-accent: #C46492;
+            --color-accent-secondary: #7764C4;
+            --color-accent-tertiary: #64C4BE;
+            --color-border: #E5E5E5;
+
+            --font-display: 'Sora', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 32px 0;
+            background: var(--color-surface);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--color-text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--color-accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 88px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero .gradient-text {
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: var(--color-text-light);
+            max-width: 700px;
+            margin: 0 auto 48px;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: var(--font-body);
+        }
+
+        .btn-primary {
+            background: var(--color-text);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: var(--color-accent);
+        }
+
+        .btn-secondary {
+            background: var(--color-surface);
+            color: var(--color-text);
+            border: 2px solid var(--color-border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: var(--color-surface);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-label {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .section-description {
+            font-size: 20px;
+            color: var(--color-text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 40px 24px;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            transition: var(--transition);
+        }
+
+        .feature:nth-child(1) .feature-icon {
+            background: linear-gradient(135deg, rgba(196, 100, 146, 0.1), rgba(196, 100, 146, 0.2));
+        }
+
+        .feature:nth-child(2) .feature-icon {
+            background: linear-gradient(135deg, rgba(119, 100, 196, 0.1), rgba(119, 100, 196, 0.2));
+        }
+
+        .feature:nth-child(3) .feature-icon {
+            background: linear-gradient(135deg, rgba(100, 196, 190, 0.1), rgba(100, 196, 190, 0.2));
+        }
+
+        .feature:hover .feature-icon {
+            transform: translateY(-8px) scale(1.05);
+        }
+
+        .feature h3 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature p {
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        /* Portfolio Grid */
+        .portfolio {
+            padding: 100px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .card {
+            background: var(--color-surface);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid var(--color-border);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .card-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #f5f5f5, #e5e5e5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card:nth-child(1) .card-image {
+            background: linear-gradient(135deg, rgba(196, 100, 146, 0.15), rgba(196, 100, 146, 0.05));
+        }
+
+        .card:nth-child(2) .card-image {
+            background: linear-gradient(135deg, rgba(119, 100, 196, 0.15), rgba(119, 100, 196, 0.05));
+        }
+
+        .card:nth-child(3) .card-image {
+            background: linear-gradient(135deg, rgba(100, 196, 190, 0.15), rgba(100, 196, 190, 0.05));
+        }
+
+        .card:nth-child(4) .card-image {
+            background: linear-gradient(135deg, rgba(196, 164, 100, 0.15), rgba(196, 164, 100, 0.05));
+        }
+
+        .card:nth-child(5) .card-image {
+            background: linear-gradient(135deg, rgba(164, 100, 196, 0.15), rgba(164, 100, 196, 0.05));
+        }
+
+        .card:nth-child(6) .card-image {
+            background: linear-gradient(135deg, rgba(100, 164, 196, 0.15), rgba(100, 164, 196, 0.05));
+        }
+
+        .card-content {
+            padding: 28px;
+        }
+
+        .card-title {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .card-description {
+            color: var(--color-text-light);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--color-bg);
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--color-text-light);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--color-text);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .email-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .email-input {
+            flex: 1;
+            min-width: 280px;
+            padding: 16px 24px;
+            border-radius: 100px;
+            border: none;
+            font-size: 16px;
+            font-family: var(--font-body);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .email-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .email-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-cta {
+            background: white;
+            color: var(--color-text);
+            padding: 16px 36px;
+            border-radius: 100px;
+            border: none;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-body);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            background: var(--color-accent);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 40px;
+            background: var(--color-surface);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-section h4 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--color-accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--color-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .social-link:hover {
+            background: var(--color-accent);
+            color: white;
+            transform: translateY(-4px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-light);
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 20px;
+            }
+
+            .hero {
+                padding: 80px 0 60px;
+            }
+
+            .about, .portfolio {
+                padding: 60px 0;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-input {
+                min-width: 100%;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon">I</span>
+                <span>InnerIcons</span>
+            </a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>
+                Hey creator!<br>
+                Let's make your designs <span class="gradient-text">iconic</span>
+            </h1>
+            <p>
+                Discover beautifully crafted icon sets and design resources built for designers,
+                developers, and creators who care about the details.
+            </p>
+            <div class="hero-cta">
+                <a href="#work" class="btn btn-primary">Explore Collections</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">What We Do</div>
+                <h2 class="section-title">Design resources that spark creativity</h2>
+                <p class="section-description">
+                    Every icon set is crafted with attention to detail, ensuring consistency,
+                    clarity, and versatility for your projects.
+                </p>
+            </div>
+
+            <div class="features">
+                <div class="feature reveal">
+                    <div class="feature-icon">✨</div>
+                    <h3>Pixel Perfect</h3>
+                    <p>Every icon is meticulously designed on a grid to ensure crisp rendering at any size.</p>
+                </div>
+                <div class="feature reveal">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Fully Customizable</h3>
+                    <p>Available in multiple formats (SVG, PNG, Figma) with editable strokes and fills.</p>
+                </div>
+                <div class="feature reveal">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Ready to Use</h3>
+                    <p>Organized, named, and optimized for immediate integration into your workflow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section id="work" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Collections</div>
+                <h2 class="section-title">Choose your own adventure</h2>
+            </div>
+
+            <div class="grid">
+                <div class="card reveal">
+                    <div class="card-image">🎯</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Essential UI Icons</h3>
+                        <p class="card-description">
+                            300+ essential interface icons covering navigation, actions, media, and more.
+                        </p>
+                        <div class="card-meta">
+                            <span class="tag">SVG</span>
+                            <span class="tag">PNG</span>
+                            <span class="tag">Figma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-image">🌟</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Social Media Pack</h3>
+                        <p class="card-description">
+                            Complete set of social platform icons in multiple styles and sizes.
+                        </p>
+                        <div class="card-meta">
+                            <span class="tag">SVG</span>
+                            <span class="tag">Multi-style</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-image">🚀</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Business & Finance</h3>
+                        <p class="card-description">
+                            Professional icons for dashboards, analytics, and business applications.
+                        </p>
+                        <div class="card-meta">
+                            <span class="tag">SVG</span>
+                            <span class="tag">PNG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-image">🎭</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Creative Tools</h3>
+                        <p class="card-description">
+                            Icons representing design software, creative processes, and artistic concepts.
+                        </p>
+                        <div class="card-meta">
+                            <span class="tag">Figma</span>
+                            <span class="tag">Outlined</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-image">💼</div>
+                    <div class="card-content">
+                        <h3 class="card-title">E-commerce Suite</h3>
+                        <p class="card-description">
+                            Everything you need for online stores: shopping, checkout, shipping, and more.
+                        </p>
+                        <div class="card-meta">
+                            <span class="tag">SVG</span>
+                            <span class="tag">Customizable</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-image">🌈</div>
+                    <div class="card-content">
+                        <h3 class="card-title">Weather & Nature</h3>
+                        <p class="card-description">
+                            Beautiful weather conditions, seasons, and natural elements in cohesive style.
+                        </p>
+                        <div class="card-meta">
+                            <span class="tag">SVG</span>
+                            <span class="tag">PNG</span>
+                            <span class="tag">Animated</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Ready to elevate your designs?</h2>
+            <p>
+                Join thousands of creators who use InnerIcons in their projects.
+                Get notified when we launch new collections.
+            </p>
+            <form class="email-form" id="emailForm">
+                <input
+                    type="email"
+                    class="email-input"
+                    placeholder="Enter your email address"
+                    required
+                >
+                <button type="submit" class="btn-cta">Get Updates</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>InnerIcons</h4>
+                    <p style="color: var(--color-text-light); line-height: 1.6;">
+                        Creating beautiful, functional icon sets for the modern web.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="#">Essential UI</a></li>
+                        <li><a href="#">Social Media</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">E-commerce</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Figma Plugin</a></li>
+                        <li><a href="#">License</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Dribbble">🏀</a>
+                        <a href="#" class="social-link" aria-label="GitHub">🐙</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 InnerIcons. All rights reserved. Made with care for creators everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const revealPoint = 100;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Email form submission
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+
+            // Here you would integrate with your email service (Mailchimp, ConvertKit, etc.)
+            console.log('Email submitted:', email);
+
+            // Show success message
+            alert('Thanks for subscribing! We\'ll keep you updated on new collections.');
+            this.reset();
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero');
+            const scrolled = window.pageYOffset;
+            hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+        });
+    </script>
+</body>
+</html>
